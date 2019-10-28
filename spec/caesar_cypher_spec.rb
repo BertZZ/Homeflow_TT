@@ -8,8 +8,12 @@ describe CaesarCypher do
       expect(CaesarCypher.encrypt('a',1)).to eq('b')
     end
 
-    it 'returns a letter 2 away when given a key of 2' do
+    it 'returns letters 2 away when given a key of 2' do
       expect(CaesarCypher.encrypt('a',2)).to eq('c')
+    end
+
+    it 'returns a when given z and a key of 1' do
+      expect(CaesarCypher.encrypt('z',1)).to eq('a')
     end
   end
 end
