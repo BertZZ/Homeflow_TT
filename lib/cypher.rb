@@ -11,6 +11,6 @@ class CaesarCypher
         encrypted_string << char
       end
     end
-    encrypted_string
+    puts encrypted_string
   end
 end
