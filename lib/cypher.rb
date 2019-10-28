@@ -1,11 +1,15 @@
 class CaesarCypher
 
-  def self.encrypt(string,key)
+  def self.encrypt(string,key)7
+    letters = ("a".."z")
     encrypted_string = ''
 
     string.each_char do |char|
-      puts char.ord
-      char.ord+key < 123 ? (encrypted_string << char.ord+key) : (encrypted_string << (char.ord+key) - 26)
+      if letters.include? (char)
+        char.ord+key < 123 ? (encrypted_string << char.ord+key) : (encrypted_string << (char.ord+key) - 26)
+      else
+        encrypted_string << char
+      end
     end
     encrypted_string
   end

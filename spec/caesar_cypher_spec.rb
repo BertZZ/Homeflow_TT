@@ -15,5 +15,13 @@ describe CaesarCypher do
     it 'returns a when given z and a key of 1' do
       expect(CaesarCypher.encrypt('z',1)).to eq('a')
     end
+
+    it 'maintains special characters' do
+      expect(CaesarCypher.encrypt('abc d ef!',1)).to eq('bcd e fg!')
+    end
+
+    it 'encrypts the string homeflow correctly with a key of 3' do
+      expect(CaesarCypher.encrypt('homeflow',3)).to eq('krphiorz')
+    end
   end
 end
